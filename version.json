@@ -1,7 +1,13 @@
 {
   "version": "1.1.1",
-  "buildNumber": 3,
-  "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.1/heytv-release.apk",
-  "releaseNotes": "Versão 1.1.1: Teste de atualização automática em tempo real ativado com sucesso!",
+  "buildNumber": 2,
+  "downloads": {
+    "android": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-release.apk",
+    "windows": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-windows.zip",
+    "ios": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-ios.zip",
+    "linux": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-linux.tar.gz",
+    "web": "https://heyicardo-netizen.github.io/heyTV/"
+  },
+  "releaseNotes": "Novo visual Glassmorphic 4K, suporte otimizado para Android TV Box, iPhone (iOS), Windows, Linux e banco de dados Neon PostgreSQL!",
   "mandatory": false
 }

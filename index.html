@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HeyTV HD • O Melhor App de Transmissão para Android, TV Box & iOS</title>
-  <meta name="description" content="Baixe o HeyTV HD oficial. Transmissão 4K para Android, Android TV Box, iPhone (iOS) e PC com banco de dados Neon Cloud.">
+  <title>HeyTV HD • Download Multiplataforma (Android, TV Box, iOS, Windows, Linux)</title>
+  <meta name="description" content="Baixe o HeyTV HD oficial para Android APK, Android TV Box, iPhone (iOS), Windows Executável e Linux com Neon Cloud.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       width: 90%;
       margin: 40px auto;
     }
@@ -97,7 +97,7 @@
     p.subtitle {
       font-size: 1.2rem;
       color: var(--text-sub);
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 36px auto;
       line-height: 1.6;
     }
@@ -110,14 +110,12 @@
       backdrop-filter: blur(16px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
 
     .version-tag {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-sub);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .version-number {
@@ -125,61 +123,60 @@
       font-weight: 700;
     }
 
-    .cta-group {
-      display: flex;
-      flex-wrap: wrap;
+    /* Grid of Download Buttons for Multiplatform */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
-      justify-content: center;
       margin-bottom: 30px;
     }
 
-    .btn {
-      display: inline-flex;
+    .btn-platform {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
-      padding: 16px 36px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 700;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 16px;
+      border-radius: 20px;
       text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+      font-weight: 700;
       color: #FFFFFF;
-      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
-      border: none;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
+    .btn-platform:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary-cyan);
+      box-shadow: 0 10px 25px rgba(0, 229, 255, 0.25);
+      background: rgba(0, 229, 255, 0.1);
+    }
+
+    .btn-platform.recommended {
+      background: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+      border: none;
+      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
+    }
+
+    .btn-platform.recommended:hover {
       box-shadow: 0 12px 35px rgba(0, 229, 255, 0.5);
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-      backdrop-filter: blur(10px);
+    .platform-icon {
+      font-size: 1.8rem;
     }
 
-    .platforms {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+    .platform-label {
+      font-size: 1.05rem;
     }
 
-    .platform-pill {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--text-sub);
+    .platform-ext {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      font-weight: 400;
     }
 
     .features-grid {
@@ -229,44 +226,55 @@
     <header>
       <div class="badge">
         <span class="badge-dot"></span>
-        VERSÃO OFICIAL DISPONÍVEL
+        DISPONÍVEL PARA TODAS AS PLATAFORMAS
       </div>
       <h1>HeyTV HD Multiplataforma</h1>
-      <p class="subtitle">Transmissão 4K Ultra HD para Android, Android TV Box, iPhone (iOS) e PC com banco de dados Neon Cloud.</p>
+      <p class="subtitle">Selecione o seu sistema operacional abaixo para baixar a versão oficial recomendada.</p>
     </header>
 
     <div class="hero-card">
-      <div class="version-tag">Última Atualização: <span class="version-number" id="appVersion">v1.1.0 (Build 2)</span></div>
+      <div class="version-tag">Versão Oficial Mais Recente: <span class="version-number" id="appVersion">v1.1.1</span></div>
       
-      <div class="cta-group">
-        <a href="https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-release.apk" class="btn btn-primary" id="downloadBtn">
-          Baixar APK Oficial (Android & TV Box)
+      <!-- Dynamic Download Grid -->
+      <div class="download-grid">
+        <a href="#" class="btn-platform recommended" id="dlAndroid">
+          <span class="platform-icon">📱</span>
+          <span class="platform-label">Android & TV Box</span>
+          <span class="platform-ext">Arquivo .APK</span>
         </a>
-      </div>
-
-      <div class="platforms">
-        <span class="platform-pill">📱 Android (APK)</span>
-        <span class="platform-pill">📺 Android TV Box</span>
-        <span class="platform-pill">🍏 iPhone (iOS)</span>
-        <span class="platform-pill">💻 Windows Executável</span>
+        <a href="#" class="btn-platform" id="dlWindows">
+          <span class="platform-icon">💻</span>
+          <span class="platform-label">Windows PC</span>
+          <span class="platform-ext">Executável .ZIP / .EXE</span>
+        </a>
+        <a href="#" class="btn-platform" id="dlIos">
+          <span class="platform-icon">🍏</span>
+          <span class="platform-label">iPhone & iPad</span>
+          <span class="platform-ext">iOS Runner Bundle</span>
+        </a>
+        <a href="#" class="btn-platform" id="dlLinux">
+          <span class="platform-icon">🐧</span>
+          <span class="platform-label">Linux</span>
+          <span class="platform-ext">Pacote .TAR.GZ</span>
+        </a>
       </div>
     </div>
 
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🚀</div>
-        <div class="feature-title">Atualizações Automáticas</div>
-        <div class="feature-desc">O app avisa na abertura assim que uma nova versão JSON for lançada no GitHub.</div>
+        <div class="feature-title">Atualização Inteligente por Sistema</div>
+        <div class="feature-desc">Cada aplicativo baixa automaticamente a atualização correspondente ao seu SO.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <div class="feature-title">Neon Cloud PostgreSQL</div>
-        <div class="feature-desc">Conexão ultrarrápida com banco de dados em nuvem criptografado.</div>
+        <div class="feature-desc">Conexão criptografada e rápida com banco de dados em nuvem.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📺</div>
-        <div class="feature-title">Modo TV Box</div>
-        <div class="feature-desc">Navegação otimizada para controles remotos com efeito Glassmorphism.</div>
+        <div class="feature-title">Otimização TV Box</div>
+        <div class="feature-desc">Suporte nativo a controles remotos D-Pad em telas grandes.</div>
       </div>
     </div>
   </div>
@@ -280,7 +288,12 @@
       .then(r => r.json())
       .then(data => {
         if (data.version) document.getElementById('appVersion').innerText = 'v' + data.version;
-        if (data.downloadUrl) document.getElementById('downloadBtn').href = data.downloadUrl;
+        if (data.downloads) {
+          if (data.downloads.android) document.getElementById('dlAndroid').href = data.downloads.android;
+          if (data.downloads.windows) document.getElementById('dlWindows').href = data.downloads.windows;
+          if (data.downloads.ios) document.getElementById('dlIos').href = data.downloads.ios;
+          if (data.downloads.linux) document.getElementById('dlLinux').href = data.downloads.linux;
+        }
       })
       .catch(e => console.log(e));
   </script>
