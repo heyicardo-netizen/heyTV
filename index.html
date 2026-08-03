@@ -118,15 +118,9 @@
       margin-bottom: 28px;
     }
 
-    .version-number {
-      color: var(--primary-cyan);
-      font-weight: 700;
-    }
-
-    /* Grid of Download Buttons for Multiplatform */
     .download-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
       margin-bottom: 30px;
     }
@@ -137,7 +131,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 20px 16px;
+      padding: 22px 16px;
       border-radius: 20px;
       text-decoration: none;
       font-weight: 700;
@@ -173,10 +167,10 @@
       font-size: 1.05rem;
     }
 
-    .platform-ext {
-      font-size: 0.75rem;
-      opacity: 0.8;
-      font-weight: 400;
+    .platform-ver {
+      font-size: 0.8rem;
+      color: var(--primary-cyan);
+      font-weight: 600;
     }
 
     .features-grid {
@@ -226,36 +220,36 @@
     <header>
       <div class="badge">
         <span class="badge-dot"></span>
-        DISPONÍVEL PARA TODAS AS PLATAFORMAS
+        VERSÕES INDEPENDENTES POR SISTEMA OPERACIONAL
       </div>
       <h1>HeyTV HD Multiplataforma</h1>
-      <p class="subtitle">Selecione o seu sistema operacional abaixo para baixar a versão oficial recomendada.</p>
+      <p class="subtitle">Baixe a versão correspondente ao seu dispositivo com atualizações independentes.</p>
     </header>
 
     <div class="hero-card">
-      <div class="version-tag">Versão Oficial Mais Recente: <span class="version-number" id="appVersion">v1.1.1</span></div>
+      <div class="version-tag">Selecione o seu sistema operacional:</div>
       
-      <!-- Dynamic Download Grid -->
+      <!-- Independent Platform Grid -->
       <div class="download-grid">
         <a href="#" class="btn-platform recommended" id="dlAndroid">
           <span class="platform-icon">📱</span>
           <span class="platform-label">Android & TV Box</span>
-          <span class="platform-ext">Arquivo .APK</span>
+          <span class="platform-ver" id="verAndroid">v1.1.1</span>
         </a>
         <a href="#" class="btn-platform" id="dlWindows">
           <span class="platform-icon">💻</span>
           <span class="platform-label">Windows PC</span>
-          <span class="platform-ext">Executável .ZIP / .EXE</span>
+          <span class="platform-ver" id="verWindows">v1.2.0</span>
         </a>
         <a href="#" class="btn-platform" id="dlIos">
           <span class="platform-icon">🍏</span>
           <span class="platform-label">iPhone & iPad</span>
-          <span class="platform-ext">iOS Runner Bundle</span>
+          <span class="platform-ver" id="verIos">v1.0.5</span>
         </a>
         <a href="#" class="btn-platform" id="dlLinux">
           <span class="platform-icon">🐧</span>
           <span class="platform-label">Linux</span>
-          <span class="platform-ext">Pacote .TAR.GZ</span>
+          <span class="platform-ver" id="verLinux">v1.0.2</span>
         </a>
       </div>
     </div>
@@ -263,18 +257,18 @@
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🚀</div>
-        <div class="feature-title">Atualização Inteligente por Sistema</div>
-        <div class="feature-desc">Cada aplicativo baixa automaticamente a atualização correspondente ao seu SO.</div>
+        <div class="feature-title">Atualizações Independentes</div>
+        <div class="feature-desc">Cada plataforma possui seu próprio ciclo de versão sem interferir nos outros sistemas.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <div class="feature-title">Neon Cloud PostgreSQL</div>
-        <div class="feature-desc">Conexão criptografada e rápida com banco de dados em nuvem.</div>
+        <div class="feature-desc">Conexão em nuvem criptografada e rápida para todos os clientes.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📺</div>
-        <div class="feature-title">Otimização TV Box</div>
-        <div class="feature-desc">Suporte nativo a controles remotos D-Pad em telas grandes.</div>
+        <div class="feature-title">Controle Remoto TV Box</div>
+        <div class="feature-desc">Suporte nativo a navegação D-Pad em Smart TVs e TV Boxes.</div>
       </div>
     </div>
   </div>
@@ -287,12 +281,24 @@
     fetch('./version.json')
       .then(r => r.json())
       .then(data => {
-        if (data.version) document.getElementById('appVersion').innerText = 'v' + data.version;
-        if (data.downloads) {
-          if (data.downloads.android) document.getElementById('dlAndroid').href = data.downloads.android;
-          if (data.downloads.windows) document.getElementById('dlWindows').href = data.downloads.windows;
-          if (data.downloads.ios) document.getElementById('dlIos').href = data.downloads.ios;
-          if (data.downloads.linux) document.getElementById('dlLinux').href = data.downloads.linux;
+        if (data.platforms) {
+          const p = data.platforms;
+          if (p.android) {
+            document.getElementById('dlAndroid').href = p.android.downloadUrl;
+            document.getElementById('verAndroid').innerText = 'v' + p.android.version;
+          }
+          if (p.windows) {
+            document.getElementById('dlWindows').href = p.windows.downloadUrl;
+            document.getElementById('verWindows').innerText = 'v' + p.windows.version;
+          }
+          if (p.ios) {
+            document.getElementById('dlIos').href = p.ios.downloadUrl;
+            document.getElementById('verIos').innerText = 'v' + p.ios.version;
+          }
+          if (p.linux) {
+            document.getElementById('dlLinux').href = p.linux.downloadUrl;
+            document.getElementById('verLinux').innerText = 'v' + p.linux.version;
+          }
         }
       })
       .catch(e => console.log(e));

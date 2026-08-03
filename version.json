@@ -1,13 +1,29 @@
 {
-  "version": "1.1.1",
-  "buildNumber": 2,
-  "downloads": {
-    "android": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-release.apk",
-    "windows": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-windows.zip",
-    "ios": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-ios.zip",
-    "linux": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-linux.tar.gz",
-    "web": "https://heyicardo-netizen.github.io/heyTV/"
+  "platforms": {
+    "android": {
+      "version": "1.1.1",
+      "buildNumber": 2,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.1/heytv-android.apk",
+      "releaseNotes": "Suporte otimizado para Android TV Box, 4K HDR e banco Neon Cloud!"
+    },
+    "windows": {
+      "version": "1.2.0",
+      "buildNumber": 3,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.2.0/heytv-windows.zip",
+      "releaseNotes": "Versão Windows PC de alta performance com aceleração de hardware!"
+    },
+    "ios": {
+      "version": "1.0.5",
+      "buildNumber": 1,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.0.5/heytv-ios.zip",
+      "releaseNotes": "Otimizações de bateria e fluididade para iPhone e iPad!"
+    },
+    "linux": {
+      "version": "1.0.2",
+      "buildNumber": 1,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.0.2/heytv-linux.tar.gz",
+      "releaseNotes": "Versão nativa e estável para distribuições Linux!"
+    }
   },
-  "releaseNotes": "Novo visual Glassmorphic 4K, suporte otimizado para Android TV Box, iPhone (iOS), Windows, Linux e banco de dados Neon PostgreSQL!",
   "mandatory": false
 }
