@@ -1,28 +1,28 @@
 {
   "platforms": {
     "android": {
-      "version": "1.1.1",
-      "buildNumber": 2,
-      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.1/heytv-android.apk",
-      "releaseNotes": "Suporte otimizado para Android TV Box, 4K HDR e banco Neon Cloud!"
+      "version": "0.0.1",
+      "buildNumber": 1,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-android.apk",
+      "releaseNotes": "Versão inicial 0.0.1 para Android & TV Box com suporte a 4K HDR e Neon Cloud!"
     },
     "windows": {
-      "version": "1.2.0",
-      "buildNumber": 3,
-      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.2.0/heytv-windows.zip",
-      "releaseNotes": "Versão Windows PC de alta performance com aceleração de hardware!"
+      "version": "0.0.1",
+      "buildNumber": 1,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-windows.zip",
+      "releaseNotes": "Versão inicial 0.0.1 para Windows PC!"
     },
     "ios": {
-      "version": "1.0.5",
+      "version": "0.0.1",
       "buildNumber": 1,
-      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.0.5/heytv-ios.zip",
-      "releaseNotes": "Otimizações de bateria e fluididade para iPhone e iPad!"
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-ios.zip",
+      "releaseNotes": "Versão inicial 0.0.1 para iPhone e iPad!"
     },
     "linux": {
-      "version": "1.0.2",
+      "version": "0.0.1",
       "buildNumber": 1,
-      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v1.0.2/heytv-linux.tar.gz",
-      "releaseNotes": "Versão nativa e estável para distribuições Linux!"
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-linux.tar.gz",
+      "releaseNotes": "Versão inicial 0.0.1 para Linux!"
     }
   },
   "mandatory": false
