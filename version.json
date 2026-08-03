@@ -3,8 +3,14 @@
     "android": {
       "version": "0.0.1",
       "buildNumber": 1,
-      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-release.apk",
-      "releaseNotes": "Versão inicial 0.0.1 para Android & TV Box com suporte a 4K HDR e Neon Cloud!"
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-mobile-release.apk",
+      "releaseNotes": "Versão inicial 0.0.1 otimizada para celulares e tablets Android!"
+    },
+    "tvbox": {
+      "version": "0.0.1",
+      "buildNumber": 1,
+      "downloadUrl": "https://github.com/heyicardo-netizen/heyTV/releases/download/v0.0.1/heytv-tvbox-release.apk",
+      "releaseNotes": "Versão inicial 0.0.1 otimizada para Android TV Box com controle remoto D-Pad!"
     },
     "windows": {
       "version": "0.0.1",
