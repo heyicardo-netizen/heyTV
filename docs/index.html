@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeyTV HD • O Melhor App de Transmissão para Android, TV Box & iOS</title>
+  <meta name="description" content="Baixe o HeyTV HD oficial. Transmissão 4K para Android, Android TV Box, iPhone (iOS) e PC com banco de dados Neon Cloud.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-bg: rgba(18, 22, 34, 0.75);
+      --border-color: rgba(255, 255, 255, 0.12);
+      --primary-purple: #7C4DFF;
+      --primary-cyan: #00E5FF;
+      --accent-pink: #FF4081;
+      --text-main: #F8FAFC;
+      --text-sub: #94A3B8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(124, 77, 255, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(0, 229, 255, 0.15) 0%, transparent 45%);
+    }
+
+    /* Container Glassmorphism */
+    .container {
+      max-width: 900px;
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: var(--primary-cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary-cyan);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--primary-cyan) 80%, var(--primary-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: var(--text-sub);
+      max-width: 650px;
+      margin: 0 auto 36px auto;
+      line-height: 1.6;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(124, 77, 255, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .version-tag {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+    }
+
+    .version-number {
+      color: var(--primary-cyan);
+      font-weight: 700;
+    }
+
+    /* Action Buttons */
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+      color: #FFFFFF;
+      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 229, 255, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Platform Pills */
+    .platforms {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .platform-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .hero-card { padding: 24px 16px; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        VERSÃO OFICIAL DISPONÍVEL
+      </div>
+      <h1>HeyTV HD Multiplataforma</h1>
+      <p class="subtitle">Transmissão 4K Ultra HD de filmes, canais e esportes em tempo real para Android, TV Box, iOS e PC.</p>
+    </header>
+
+    <!-- Main Download Hero Card -->
+    <div class="hero-card">
+      <div class="version-tag">Última Atualização: <span class="version-number" id="appVersion">v1.1.0 (Build 2)</span></div>
+      
+      <div class="cta-group">
+        <a href="https://github.com/LO-Writer/HeyTV/releases/download/v1.1.0/heytv-release.apk" class="btn btn-primary" id="downloadBtn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Baixar APK Oficial (Android & TV Box)
+        </a>
+        <a href="https://github.com/LO-Writer/HeyTV/releases" class="btn btn-secondary">
+          Ver Lançamentos no GitHub
+        </a>
+      </div>
+
+      <div class="platforms">
+        <span class="platform-pill">📱 Android (APK)</span>
+        <span class="platform-pill">📺 Android TV Box (D-Pad)</span>
+        <span class="platform-pill">🍏 iPhone (iOS)</span>
+        <span class="platform-pill">💻 Windows Executável</span>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <div class="feature-title">Atualizações Automáticas</div>
+        <div class="feature-desc">O aplicativo avisa na abertura assim que uma nova versão JSON for lançada no GitHub.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Neon Cloud PostgreSQL</div>
+        <div class="feature-desc">Conexão ultrarrápida com banco de dados em nuvem criptografado e seguro.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📺</div>
+        <div class="feature-title">Modo Controle Remoto</div>
+        <div class="feature-desc">Navegação otimizada para teclados e controles de TV Box com efeito Glassmorphism.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>HeyTV HD &copy; 2026 • Desenvolvido por LO & ENI Studio. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Carregar dinamicamente o arquivo version.json
+    fetch('./version.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data.version) {
+          document.getElementById('appVersion').innerText = 'v' + data.version + ' (Build ' + (data.buildNumber || 1) + ')';
+        }
+        if (data.downloadUrl) {
+          document.getElementById('downloadBtn').href = data.downloadUrl;
+        }
+      })
+      .catch(err => console.log('Usando valores padrão de fallback:', err));
+  </script>
+</body>
+</html>
