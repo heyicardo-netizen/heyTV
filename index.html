@@ -41,7 +41,6 @@
         radial-gradient(circle at 85% 85%, rgba(0, 229, 255, 0.15) 0%, transparent 45%);
     }
 
-    /* Container Glassmorphism */
     .container {
       max-width: 900px;
       width: 90%;
@@ -103,7 +102,6 @@
       line-height: 1.6;
     }
 
-    /* Hero Card */
     .hero-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -114,17 +112,6 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(124, 77, 255, 0.1) 0%, transparent 70%);
-      pointer-events: none;
     }
 
     .version-tag {
@@ -138,7 +125,6 @@
       font-weight: 700;
     }
 
-    /* Action Buttons */
     .cta-group {
       display: flex;
       flex-wrap: wrap;
@@ -179,12 +165,6 @@
       backdrop-filter: blur(10px);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.12);
-      transform: translateY(-2px);
-    }
-
-    /* Platform Pills */
     .platforms {
       display: flex;
       justify-content: center;
@@ -202,7 +182,6 @@
       color: var(--text-sub);
     }
 
-    /* Features Grid */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -216,24 +195,17 @@
       border-radius: 18px;
       padding: 24px;
       backdrop-filter: blur(12px);
-      transition: transform 0.3s ease;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
     }
 
     .feature-icon {
       font-size: 2rem;
       margin-bottom: 12px;
-      display: inline-block;
     }
 
     .feature-title {
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 8px;
-      color: var(--text-main);
     }
 
     .feature-desc {
@@ -250,16 +222,9 @@
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       width: 100%;
     }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      .hero-card { padding: 24px 16px; }
-      .btn { width: 100%; justify-content: center; }
-    }
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
       <div class="badge">
@@ -267,47 +232,41 @@
         VERSÃO OFICIAL DISPONÍVEL
       </div>
       <h1>HeyTV HD Multiplataforma</h1>
-      <p class="subtitle">Transmissão 4K Ultra HD de filmes, canais e esportes em tempo real para Android, TV Box, iOS e PC.</p>
+      <p class="subtitle">Transmissão 4K Ultra HD para Android, Android TV Box, iPhone (iOS) e PC com banco de dados Neon Cloud.</p>
     </header>
 
-    <!-- Main Download Hero Card -->
     <div class="hero-card">
       <div class="version-tag">Última Atualização: <span class="version-number" id="appVersion">v1.1.0 (Build 2)</span></div>
       
       <div class="cta-group">
-        <a href="https://github.com/LO-Writer/HeyTV/releases/download/v1.1.0/heytv-release.apk" class="btn btn-primary" id="downloadBtn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <a href="https://github.com/heyicardo-netizen/heyTV/releases/download/v1.1.0/heytv-release.apk" class="btn btn-primary" id="downloadBtn">
           Baixar APK Oficial (Android & TV Box)
-        </a>
-        <a href="https://github.com/LO-Writer/HeyTV/releases" class="btn btn-secondary">
-          Ver Lançamentos no GitHub
         </a>
       </div>
 
       <div class="platforms">
         <span class="platform-pill">📱 Android (APK)</span>
-        <span class="platform-pill">📺 Android TV Box (D-Pad)</span>
+        <span class="platform-pill">📺 Android TV Box</span>
         <span class="platform-pill">🍏 iPhone (iOS)</span>
         <span class="platform-pill">💻 Windows Executável</span>
       </div>
     </div>
 
-    <!-- Features -->
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🚀</div>
         <div class="feature-title">Atualizações Automáticas</div>
-        <div class="feature-desc">O aplicativo avisa na abertura assim que uma nova versão JSON for lançada no GitHub.</div>
+        <div class="feature-desc">O app avisa na abertura assim que uma nova versão JSON for lançada no GitHub.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <div class="feature-title">Neon Cloud PostgreSQL</div>
-        <div class="feature-desc">Conexão ultrarrápida com banco de dados em nuvem criptografado e seguro.</div>
+        <div class="feature-desc">Conexão ultrarrápida com banco de dados em nuvem criptografado.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📺</div>
-        <div class="feature-title">Modo Controle Remoto</div>
-        <div class="feature-desc">Navegação otimizada para teclados e controles de TV Box com efeito Glassmorphism.</div>
+        <div class="feature-title">Modo TV Box</div>
+        <div class="feature-desc">Navegação otimizada para controles remotos com efeito Glassmorphism.</div>
       </div>
     </div>
   </div>
@@ -317,18 +276,13 @@
   </footer>
 
   <script>
-    // Carregar dinamicamente o arquivo version.json
     fetch('./version.json')
-      .then(response => response.json())
+      .then(r => r.json())
       .then(data => {
-        if (data.version) {
-          document.getElementById('appVersion').innerText = 'v' + data.version + ' (Build ' + (data.buildNumber || 1) + ')';
-        }
-        if (data.downloadUrl) {
-          document.getElementById('downloadBtn').href = data.downloadUrl;
-        }
+        if (data.version) document.getElementById('appVersion').innerText = 'v' + data.version;
+        if (data.downloadUrl) document.getElementById('downloadBtn').href = data.downloadUrl;
       })
-      .catch(err => console.log('Usando valores padrão de fallback:', err));
+      .catch(e => console.log(e));
   </script>
 </body>
 </html>
